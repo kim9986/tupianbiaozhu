@@ -1,4 +1,8 @@
 var pic = document.getElementById("importpic"),
+      x_coor = document.getElementById("x_coor"),
+      y_coor = document.getElementById("y_coor"),
+      w_coor = document.getElementById("w_coor"),
+      h_coor = document.getElementById("h_coor"),
       wplace = document.getElementById("workarea"),
       img = document.getElementsByTagName("image"),
       showarea = document.getElementById("showCode"),
@@ -51,12 +55,24 @@ tool_rect.onclick = function () {
             xyarr.push(x3-x1);
             xyarr.push(y3-y1);
             arr.push(xyarr);
+            x_coor.value = x1;
+            y_coor.value = y1;
+            w_coor.value = x3-x1;
+            h_coor.value = y3-y1;
         }, false);
 
         pic.addEventListener("mouseleave", function (e) {
             rect = null;
         }, false);
 }
+
+
+x_coor.addEventListener("change", function (e) {
+    console.log(x_coor.value);
+
+}, false)
+
+
 
 tool_eras.onclick = function () {
         var newArr = arr.splice(0,arr.length);
@@ -88,22 +104,22 @@ $("#submit").on("click", function() {
     console.log(pic);
 })
 
-$("#code").on("click", function () {
-    $("#show").attr("style", "display:inline-block;");
-    $("#showCode").text($("#svgroot")[0].innerHTML);
-})
+// $("#code").on("click", function () {
+//     $("#show").attr("style", "display:inline-block;");
+//     $("#showCode").text($("#svgroot")[0].innerHTML);
+// })
 
-$("#copy").on("mousedown", function () {
-    $("#copy").attr("style", "background:grey;");
-    content.select();
-    document.execCommand("Copy");
-})
+// $("#copy").on("mousedown", function () {
+//     $("#copy").attr("style", "background:grey;");
+//     content.select();
+//     document.execCommand("Copy");
+// })
 
-$("#copy").on("mouseup", function () {
-    $("#copy").attr("style", "background:#EBE2E2;");
-})
+// $("#copy").on("mouseup", function () {
+//     $("#copy").attr("style", "background:#EBE2E2;");
+// })
 
-$("#close").on('click', function () {
-    $("#show").attr("style", "display:none;")
-});
+// $("#close").on('click', function () {
+//     $("#show").attr("style", "display:none;")
+// });
 

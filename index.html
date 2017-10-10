@@ -30,11 +30,33 @@
       </div>
 </div>
 <div id="button">
-      <button id="reset" style="font-weight: normal;">重选</button><br>
-      <button id="submit" style="font-weight: normal;">确定</button>
+      <div id="show_coor">
+        <table>
+          <tr>
+            <td><span class="coor_text">X</span></td>
+            <td><input type="text" class="input_text" id="x_coor"></td>
+            <td style="width:10px;"></td>
+            <td><span class="coor_text">Y</span></td>
+            <td><input type="text" class="input_text" id="y_coor"></td>
+          </tr>
+          <tr style="height: 30px;"></tr>
+          <tr>
+            <td><span class="coor_text">Width</span></td>
+            <td><input type="text" class="input_text" id="w_coor"></td>
+            <td></td>
+            <td><span class="coor_text">Height</span></td>
+            <td><input type="text" class="input_text" id="h_coor"></td>
+          </tr>
+          <tr style="height: 60px;"></tr>
+          <tr style="text-align: center;">
+            <td colspan="2"><button id="reset" style="font-weight: normal;">重选</button></td>
+            <td></td>
+            <td colspan="2"><button id="submit" style="font-weight: normal;">确定</button></td>
+          </tr>
+        </table>
+      </div>
 </div>
 <script type="text/javascript" src="lib/jquery.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/drag.js"></script>
 </body>
 </html>
